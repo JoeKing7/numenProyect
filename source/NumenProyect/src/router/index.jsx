@@ -4,12 +4,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import App from '../App'
 import NotFound from '../views/NotFound'
 import Products from '../views/Products'
+import Anuncio from '../components/Anuncio/Anuncio'
+import Head from '../layouts/Header/Head'
 
 const index = () => {
   return (
     <React.StrictMode>
       <BrowserRouter>
         <CssBaseline />
+        <Anuncio></Anuncio>
+        <Head></Head>
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route path="/products" element={<Products />}></Route>
