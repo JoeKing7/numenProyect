@@ -33,6 +33,16 @@ const ProductCard = ({ description }) => {
               Comprar
             </Button>
           </div>
+          <div className="rating">
+            <h3>
+              <i class="fas fa-star"></i>
+              {rating.rate}
+            </h3>
+            <h2>
+              <i class="fas fa-boxes"></i>
+              {rating.count > 0 ? rating.count : 'No stock'}
+            </h2>
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
+import { Grid } from '@mui/material'
 import React, { Fragment, useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import ProductCard from '../components/Products/ProductCard'
 import API from '../services/utils/fetchData/api'
 
@@ -12,11 +12,14 @@ const Products = () => {
   const DATA = products.data || []
   return (
     <Fragment>
-      <NavLink to="/">Volver</NavLink>
       <h1>Products {DATA.lenght}</h1>
-      {DATA.map((val, ind) => (
-        <ProductCard description={val} key={ind}></ProductCard>
-      ))}
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        {DATA.map((val, ind) => (
+          <Grid item sm={12} xs={12} md={6} key={ind}>
+            <ProductCard description={val}></ProductCard>
+          </Grid>
+        ))}
+      </Grid>
     </Fragment>
   )
 }

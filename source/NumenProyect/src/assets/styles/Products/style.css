@@ -2,6 +2,7 @@
   display: flex;
   justify-content: start;
   background: #fff;
+  margin-left: 10px;
 }
 
 .card {
@@ -74,7 +75,7 @@
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 1.3em;
   line-height: 1em;
 }
 
@@ -106,7 +107,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .card .details .group h2 {
@@ -117,4 +118,18 @@
 
 .card .details .group sup {
   font-weight: 300;
+}
+
+.card .details .rating {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card .details .rating h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
 }
