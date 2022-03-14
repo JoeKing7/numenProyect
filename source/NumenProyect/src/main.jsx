@@ -1,12 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CssBaseline from '@mui/material/CssBaseline'
-import App from './App'
+import Router from './router'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <CssBaseline />
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+ReactDOM.render(<Router />, document.getElementById('root'))
