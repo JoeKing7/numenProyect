@@ -1,64 +1,86 @@
-import { TYPES } from "../actions/shoppingActions";
-// estos datos debemos consumirlos desde el JSON 
+import { TYPES } from '../actions/shoppingActions'
+import api from '../utils/fetchData/api'
+import { loadProducts } from '../utils/loadProducts'
+import { loadCart } from '../utils/loadCart'
+
+const { data: products } = await loadProducts()
+const { data: cart } = await loadCart()
+// estos datos debemos consumirlos desde el JSON
 export const shoppingInitialState = {
-    products: [
-        { id: 1, name: "Producto A", price: 10 },
-        { id: 2, name: "Producto B", price: 50 },
-        { id: 3, name: "Producto C", price: 100 },
-        { id: 4, name: "Producto D", price: 150 },
-        { id: 5, name: "Producto E", price: 200 },
-    ],  
-    cart: [],
-};
-// Hasta acá hay que borrar
+  products,
+  cart,
+}
+
 export function shoppingReducer(state, action) {
-    switch (action.type) {
-        case TYPES.ADD_TO_CART: {
-            let newItem = state.products.find(product => product.id === action.payload)
+  switch (action.type) {
+    case TYPES.ADD_TO_CART: {
+      let newItem = state.products.find(
+        (product) => product.id === action.payload
+      )
 
-            let itemInCart = state.cart.find(item => item.id === newItem.id)
+      let itemInCart = state.cart.find((item) => item.id === newItem.id)
 
-            return itemInCart 
-            ? {
-                ...state,
-                cart: state.cart.map(item => 
-                    item.id === newItem.id
-                        ? {...item,quantity: item.quantity + 1}
-                        : {item}
-                    )
-            }
-            : {
-                ...state,
-                cart:[...state.cart, {...newItem, quantity: 1}]
-            }
+      if (itemInCart) {
+        return {
+          ...state,
+          cart: state.cart.map((item) =>
+            item.id === newItem.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : { item }
+          ),
         }
-        case TYPES.REMOVE_ONE_PRODUCT: {
-            let itemToDelete = state.cart.find( item => item.id === action.payload)
-
-            return itemToDelete.quantity > 1
-                ?{
-                    ...state,
-                    cart: state.cart.map(item =>
-                        item.id === action.payload
-                        ?{...item, quantity: item.quantity - 1}
-                        :{item}
-                        )
-                }
-                :{
-                    ...state,
-                    cart: state.cart.filter(item => item.id !== action.payload)
-                }
+      } else {
+        return {
+          ...state,
+          cart: [...state.cart, { ...newItem, quantity: 1 }],
         }
-        case TYPES.REMOVE_ALL_PRODUCTS: {
-            return{
-                ...state,
-                cart: state.cart.filter(item => item.id !== action.payload)
-            }
-        }
-        case TYPES.CLEAR_CART: {
-            return shoppingInitialState;
-        }
-        default:
-            return state;
+      }
+      //   return itemInCart
+      //     ? {
+      //         ...state,
+      //         cart: state.cart.map((item) =>
+      //           item.id === newItem.id
+      //             ? { ...item, quantity: item.quantity + 1 }
+      //             : { item }
+      //         ),
+      //       }
+      //     : {
+      //         ...state,
+      //         cart: [
+      //           ...state.cart,
+      //           api
+      //             .post('cart', { ...newItem, quantity: 1 })
+      //             .then(({ data }) => data),
+      //         ],
+      //       }
     }
-};
+    case TYPES.REMOVE_ONE_PRODUCT: {
+      let itemToDelete = state.cart.find((item) => item.id === action.payload)
+
+      return itemToDelete.quantity > 1
+        ? {
+            ...state,
+            cart: state.cart.map((item) =>
+              item.id === action.payload
+                ? { ...item, quantity: item.quantity - 1 }
+                : { item }
+            ),
+          }
+        : {
+            ...state,
+            cart: state.cart.filter((item) => item.id !== action.payload),
+          }
+    }
+    case TYPES.REMOVE_ALL_PRODUCTS: {
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item.id !== action.payload),
+      }
+    }
+    case TYPES.CLEAR_CART: {
+      return shoppingInitialState
+    }
+    default:
+      return state
+  }
+}

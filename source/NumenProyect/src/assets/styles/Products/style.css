@@ -120,6 +120,9 @@
   font-weight: 300;
 }
 
+.card .details .group button:hover {
+  background-color: beige;
+}
 .card .details .rating {
   position: relative;
   display: flex;

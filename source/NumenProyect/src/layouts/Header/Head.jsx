@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { styled, alpha } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -18,6 +18,9 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { Link, NavLink } from 'react-router-dom'
 import '../../assets/styles/Header/style.css'
+import { Badge } from '@mui/material'
+import { TYPES } from '../../services/actions/shoppingActions'
+import { storeContext } from '../../store/StoreProvider'
 
 const pages = ['Products', 'About', 'Instagram']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
@@ -65,8 +68,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }))
 
 const Head = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null)
-  const [anchorElUser, setAnchorElUser] = React.useState(null)
+  const [store, dispatch] = useContext(storeContext)
+  const { cart } = store
+  const [anchorElNav, setAnchorElNav] = useState(null)
+  const [anchorElUser, setAnchorElUser] = useState(null)
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -97,7 +102,7 @@ const Head = () => {
             onClick={() => console.log('Logo click')}
           >
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              <i class="fas fa-store"></i>
+              <i className="fas fa-store"></i>
             </Link>
           </Typography>
 
@@ -152,7 +157,7 @@ const Head = () => {
             }}
           >
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              <i class="fas fa-store"></i>
+              <i className="fas fa-store"></i>
             </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -177,12 +182,27 @@ const Head = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <ShoppingCartIcon
-            sx={{
-              marginLeft: '10px',
-              cursor: 'pointer',
-            }}
-          ></ShoppingCartIcon>
+          <Badge
+            badgeContent={cart?.length}
+            style={{ marginTop: '5px' }}
+            color="secondary"
+          >
+            <Link
+              to="/shoppingCart"
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                marginTop: '4px',
+              }}
+            >
+              <ShoppingCartIcon
+                sx={{
+                  marginLeft: '10px',
+                  cursor: 'pointer',
+                }}
+              ></ShoppingCartIcon>
+            </Link>
+          </Badge>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton
