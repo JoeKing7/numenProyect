@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Home from './views/Home'
+
 const App = () => {
-  return <Home />
+  return (
+    <Fragment>
+      <Home />
+    </Fragment>
+  )
 }
 export default App

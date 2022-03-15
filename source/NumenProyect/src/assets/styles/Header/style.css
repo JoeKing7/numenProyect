@@ -1,0 +1,17 @@
+.active {
+  color: orange;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.link-page {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.menu-item {
+  color: black;
+  text-decoration: none;
+}

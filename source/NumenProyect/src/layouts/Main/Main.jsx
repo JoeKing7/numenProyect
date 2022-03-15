@@ -1,7 +1,6 @@
 import { Box } from '@mui/material'
 import React, { Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
-import Products from '../../views/Products'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
   return (
@@ -36,12 +35,9 @@ const Main = () => {
           justifyContent: 'center',
         }}
       >
-        <NavLink
-          to="/products"
-          style={{ textDecoration: 'none', color: 'white' }}
-        >
-          Productos
-        </NavLink>
+        <Link to="/products" style={{ textDecoration: 'none', color: 'white' }}>
+          Click aquí para ir a Productos
+        </Link>
       </Box>
     </Fragment>
   )
