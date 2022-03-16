@@ -175,32 +175,36 @@ const Head = () => {
               </NavLink>
             ))}
           </Box>
-          <Stack spacing={2} sx={{ minWidth: '30%', maxWidth: '100%' }}>
-            <Search>
-              {/* <StyledInputBase
+          <Stack spacing={2} className={'searchPro'}>
+            {/* <StyledInputBase
               placeholder="Buscar…"
               inputProps={{ 'aria-label': 'search' }}
             /> */}
-              <Autocomplete
-                id="buscarProd"
-                freeSolo
-                clearOnBlur
-                onChange={(event, newValue) => {
-                  navigate('/shoppingCart')
-                }}
-                options={products.map((option) => option.title)}
-                renderInput={(params) => (
-                  <div
-                    style={{ display: 'flex', justifyContent: 'space-between' }}
-                  >
-                    <TextField {...params} label="Buscar" sx={{}}></TextField>
-                    <SearchIconWrapper>
-                      <SearchIcon />
-                    </SearchIconWrapper>
-                  </div>
-                )}
-              />
-            </Search>
+
+            <Autocomplete
+              id="buscarProd"
+              freeSolo
+              clearOnBlur
+              onChange={(event, newValue) => {
+                if (newValue) {
+                  navigate(`/product/${newValue.id}`)
+                }
+              }}
+              options={products.map((option) => option)}
+              getOptionLabel={(option) => option.title}
+              renderInput={(params) => (
+                <Search>
+                  <SearchIconWrapper>
+                    <SearchIcon />
+                  </SearchIconWrapper>
+                  {/* <StyledInputBase
+                    placeholder="Buscar…"
+                    inputProps={{ 'aria-label': 'search' }}
+                  /> */}
+                  <TextField {...params} label="Buscar"></TextField>
+                </Search>
+              )}
+            />
           </Stack>
           <Badge
             badgeContent={cart?.length}

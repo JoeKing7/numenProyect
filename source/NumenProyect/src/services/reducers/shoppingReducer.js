@@ -19,14 +19,13 @@ export function shoppingReducer(state, action) {
       )
 
       let itemInCart = state.cart.find((item) => item.id === newItem.id)
-
       if (itemInCart) {
         return {
           ...state,
           cart: state.cart.map((item) =>
             item.id === newItem.id
               ? { ...item, quantity: item.quantity + 1 }
-              : { item }
+              : { ...item }
           ),
         }
       } else {
