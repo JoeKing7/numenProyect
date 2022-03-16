@@ -16,9 +16,9 @@ import InputBase from '@mui/material/InputBase'
 import SearchIcon from '@mui/icons-material/Search'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import '../../assets/styles/Header/style.css'
-import { Badge } from '@mui/material'
+import { Autocomplete, Badge, Stack, TextField } from '@mui/material'
 import { TYPES } from '../../services/actions/shoppingActions'
 import { storeContext } from '../../store/StoreProvider'
 
@@ -48,6 +48,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  right: 0,
 }))
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -68,8 +69,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }))
 
 const Head = () => {
+  const navigate = useNavigate()
   const [store, dispatch] = useContext(storeContext)
-  const { cart } = store
+  const { products, cart } = store
   const [anchorElNav, setAnchorElNav] = useState(null)
   const [anchorElUser, setAnchorElUser] = useState(null)
 
@@ -173,15 +175,33 @@ const Head = () => {
               </NavLink>
             ))}
           </Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
+          <Stack spacing={2} sx={{ minWidth: '30%', maxWidth: '100%' }}>
+            <Search>
+              {/* <StyledInputBase
               placeholder="Buscar…"
               inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+            /> */}
+              <Autocomplete
+                id="buscarProd"
+                freeSolo
+                clearOnBlur
+                onChange={(event, newValue) => {
+                  navigate('/shoppingCart')
+                }}
+                options={products.map((option) => option.title)}
+                renderInput={(params) => (
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <TextField {...params} label="Buscar" sx={{}}></TextField>
+                    <SearchIconWrapper>
+                      <SearchIcon />
+                    </SearchIconWrapper>
+                  </div>
+                )}
+              />
+            </Search>
+          </Stack>
           <Badge
             badgeContent={cart?.length}
             style={{ marginTop: '5px' }}

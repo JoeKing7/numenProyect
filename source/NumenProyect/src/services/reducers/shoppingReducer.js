@@ -63,7 +63,7 @@ export function shoppingReducer(state, action) {
             cart: state.cart.map((item) =>
               item.id === action.payload
                 ? { ...item, quantity: item.quantity - 1 }
-                : { item }
+                : { ...item }
             ),
           }
         : {

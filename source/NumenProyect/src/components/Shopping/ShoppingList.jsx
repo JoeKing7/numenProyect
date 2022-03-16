@@ -10,10 +10,22 @@ const ShoppingList = () => {
   const [store, dispatch] = useContext(storeContext)
   const { cart } = store
 
-  const deleteFromCart = (id, all = false) => {
+  const deleteFromCart = async (id, all = false) => {
     if (all) {
+      await api
+        .delete(`cart/${id}`)
+        .catch((err) => messageError('Error removiendo producto', err))
       dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: id })
     } else {
+      let itemInCart = cart.find((item) => item.id === id)
+      await api
+        .put(`cart/${id}`, {
+          ...itemInCart,
+          quantity: itemInCart.quantity - 1,
+        })
+        .catch((err) =>
+          messageError('Error eliminando cantidad del producto', err)
+        )
       dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: id })
     }
   }
