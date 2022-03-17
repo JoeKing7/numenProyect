@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react'
-import { styled, alpha } from '@mui/material/styles'
+import { styled, alpha, useTheme } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -18,7 +18,13 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import '../../assets/styles/Header/style.css'
-import { Autocomplete, Badge, Stack, TextField } from '@mui/material'
+import {
+  Autocomplete,
+  Badge,
+  Stack,
+  TextField,
+  useMediaQuery,
+} from '@mui/material'
 import { TYPES } from '../../services/actions/shoppingActions'
 import { storeContext } from '../../store/StoreProvider'
 
@@ -74,7 +80,8 @@ const Head = () => {
   const { products, cart } = store
   const [anchorElNav, setAnchorElNav] = useState(null)
   const [anchorElUser, setAnchorElUser] = useState(null)
-
+  const theme = useTheme()
+  const fullScreen = useMediaQuery(theme.breakpoints.up('sm'))
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -175,7 +182,23 @@ const Head = () => {
               </NavLink>
             ))}
           </Box>
-          <Stack spacing={2} className={'searchPro'}>
+          <Stack
+            spacing={2}
+            sx={{
+              color: 'inherit',
+              padding: theme.spacing(1, 1, 1, 0),
+              // vertical padding + font size from searchIcon
+              paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+              transition: theme.transitions.create('width'),
+              width: '75%',
+              [theme.breakpoints.up('md')]: {
+                width: '35%',
+                '&:focus': {
+                  width: '35%',
+                },
+              },
+            }}
+          >
             {/* <StyledInputBase
               placeholder="Buscar…"
               inputProps={{ 'aria-label': 'search' }}

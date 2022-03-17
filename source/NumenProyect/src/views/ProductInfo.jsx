@@ -1,9 +1,19 @@
-import { Button, Container } from '@mui/material'
+import {
+  Button,
+  Card,
+  CardMedia,
+  Container,
+  Grid,
+  Rating,
+  Typography,
+} from '@mui/material'
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { TYPES } from '../services/actions/shoppingActions'
 import api from '../services/utils/fetchData/api'
 import { storeContext } from '../store/StoreProvider'
+import '@fontsource/roboto/300.css'
+import { Box } from '@mui/system'
 
 const ProductInfo = () => {
   const { id } = useParams()
@@ -29,31 +39,76 @@ const ProductInfo = () => {
         .catch((err) => console.log(err))
       dispatch({ type: TYPES.ADD_TO_CART, payload: id })
     }
-
-    // console.log(state)
   }
   return (
-    <Container>
-      <h1> {productData.title}</h1>
-      <h4>Categoría: {productData.category}</h4>
-      <img src={productData.image} alt="img" width="300"></img>
-      <div style={{ display: 'flex' }}>
-        <h3>Rating: {productData.rating.rate}</h3>
-        <Button
-          sx={{
-            display: 'inline-flex',
-            marginLeft: '10px',
-            background: '#fff',
-            color: '#4ba9e9',
-            fontSize: '35px',
-          }}
-          onClick={() => addToCart(parseInt(id))}
-        >
-          <i className="fas fa-cart-plus"></i>
-        </Button>
-      </div>
-      <h2>Descripción:</h2>
-      <span>{productData.description}</span>
+    <Container sx={{ marginTop: '20px' }}>
+      <Typography variant="h4" component="div" gutterBottom>
+        {productData.title}
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom component="div">
+        Categoría: {productData.category}
+      </Typography>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12} md={6}>
+          <Card sx={{ display: 'flex', justifyContent: 'center' }}>
+            <img
+              src={productData.image}
+              alt="img"
+              style={{
+                width: '50%',
+              }}
+            ></img>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={12} md={6}>
+          <Card>
+            <Typography
+              variant="subtitle2"
+              gutterBottom
+              component="div"
+              sx={{ padding: '10px 10px 0px 20px' }}
+            >
+              Calificación:
+            </Typography>
+            <Typography variant="h6" gutterBottom component="div">
+              <Container>
+                {productData.rating.rate}
+                <Rating
+                  name="rating-read"
+                  defaultValue={productData.rating.rate}
+                  precision={0.1}
+                  readOnly
+                />
+              </Container>
+            </Typography>
+            <Container>
+              <Typography variant="h5" gutterBottom component="div">
+                ${productData.price}
+              </Typography>
+            </Container>
+            <Button
+              sx={{
+                display: 'inline-flex',
+                marginLeft: '10px',
+                background: '#fff',
+                color: '#4ba9e9',
+                fontSize: '35px',
+              }}
+              onClick={() => addToCart(parseInt(id))}
+            >
+              <i className="fas fa-cart-plus"></i>
+            </Button>
+            <Container>
+              <Typography variant="h5" gutterBottom component="div">
+                Descripción:
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                {productData.description}
+              </Typography>
+            </Container>
+          </Card>
+        </Grid>
+      </Grid>
     </Container>
   )
 }
