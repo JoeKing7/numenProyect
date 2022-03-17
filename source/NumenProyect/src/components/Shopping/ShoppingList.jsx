@@ -1,5 +1,5 @@
 import { Button, Card, Container, Grid } from '@mui/material'
-import React, { useContext } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { TYPES } from '../../services/actions/shoppingActions'
 import api from '../../services/utils/fetchData/api'
 import { messageError } from '../../services/utils/messages'
@@ -10,10 +10,22 @@ const ShoppingList = () => {
   const [store, dispatch] = useContext(storeContext)
   const { cart } = store
 
-  const deleteFromCart = (id, all = false) => {
+  const deleteFromCart = async (id, all = false) => {
     if (all) {
+      await api
+        .delete(`cart/${id}`)
+        .catch((err) => messageError('Error removiendo producto', err))
       dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: id })
     } else {
+      let itemInCart = cart.find((item) => item.id === id)
+      await api
+        .put(`cart/${id}`, {
+          ...itemInCart,
+          quantity: itemInCart.quantity - 1,
+        })
+        .catch((err) =>
+          messageError('Error eliminando cantidad del producto', err)
+        )
       dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: id })
     }
   }
@@ -26,7 +38,7 @@ const ShoppingList = () => {
   }
 
   return (
-    <>
+    <Fragment>
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={8} md={8}>
@@ -53,7 +65,7 @@ const ShoppingList = () => {
           <Card>Para algo extra (Publidad?)</Card>
         </Grid>
       </Grid>
-    </>
+    </Fragment>
   )
 }
 

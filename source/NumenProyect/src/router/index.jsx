@@ -8,6 +8,7 @@ import Anuncio from '../components/Anuncio/Anuncio'
 import Head from '../layouts/Header/Head'
 import StoreProvider from '../store/StoreProvider'
 import ShoppingCartPage from '../views/ShoppingCartPage'
+import ProductInfo from '../views/ProductInfo'
 
 const index = () => {
   return (
@@ -20,6 +21,7 @@ const index = () => {
           <Routes>
             <Route path="/" element={<App />}></Route>
             <Route path="/products" element={<Products />}></Route>
+            <Route path="/product/:id" element={<ProductInfo />}></Route>
             <Route path="/shoppingCart" element={<ShoppingCartPage />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>

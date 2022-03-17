@@ -52,8 +52,19 @@ const CartItem = ({ data, deleteFromCart }) => {
                 Eliminar uno
               </Typography> */}
               <ButtonGroup variant="text" aria-label="text button group">
-                <Button>Eliminar uno</Button>
-                <Button>Remover</Button>
+                {quantity > 1 ? (
+                  <Button onClick={() => deleteFromCart(id)}>
+                    Eliminar uno
+                  </Button>
+                ) : (
+                  <Button onClick={() => deleteFromCart(id)} disabled>
+                    Eliminar uno
+                  </Button>
+                )}
+
+                <Button onClick={() => deleteFromCart(id, true)}>
+                  Remover
+                </Button>
               </ButtonGroup>
             </Grid>
           </Grid>

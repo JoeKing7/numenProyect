@@ -6,11 +6,12 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "jsonApi": "json-server --watch src/config/JSONserver/db.json"
+    "jsonApi": "json-server --watch src/config/JSONserver/db.json --no-cors"
   },
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.3",
     "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.4",
     "axios": "^0.26.0",

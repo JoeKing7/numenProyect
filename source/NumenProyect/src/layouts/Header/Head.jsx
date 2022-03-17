@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react'
-import { styled, alpha } from '@mui/material/styles'
+import { styled, alpha, useTheme } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -16,9 +16,15 @@ import InputBase from '@mui/material/InputBase'
 import SearchIcon from '@mui/icons-material/Search'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import '../../assets/styles/Header/style.css'
-import { Badge } from '@mui/material'
+import {
+  Autocomplete,
+  Badge,
+  Stack,
+  TextField,
+  useMediaQuery,
+} from '@mui/material'
 import { TYPES } from '../../services/actions/shoppingActions'
 import { storeContext } from '../../store/StoreProvider'
 
@@ -48,6 +54,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  right: 0,
 }))
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -68,11 +75,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }))
 
 const Head = () => {
+  const navigate = useNavigate()
   const [store, dispatch] = useContext(storeContext)
-  const { cart } = store
+  const { products, cart } = store
   const [anchorElNav, setAnchorElNav] = useState(null)
   const [anchorElUser, setAnchorElUser] = useState(null)
-
+  const theme = useTheme()
+  const fullScreen = useMediaQuery(theme.breakpoints.up('sm'))
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -173,15 +182,53 @@ const Head = () => {
               </NavLink>
             ))}
           </Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
+          <Stack
+            spacing={2}
+            sx={{
+              color: 'inherit',
+              padding: theme.spacing(1, 1, 1, 0),
+              // vertical padding + font size from searchIcon
+              paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+              transition: theme.transitions.create('width'),
+              width: '75%',
+              [theme.breakpoints.up('md')]: {
+                width: '35%',
+                '&:focus': {
+                  width: '35%',
+                },
+              },
+            }}
+          >
+            {/* <StyledInputBase
               placeholder="Buscar…"
               inputProps={{ 'aria-label': 'search' }}
+            /> */}
+
+            <Autocomplete
+              id="buscarProd"
+              freeSolo
+              clearOnBlur
+              onChange={(event, newValue) => {
+                if (newValue) {
+                  navigate(`/product/${newValue.id}`)
+                }
+              }}
+              options={products.map((option) => option)}
+              getOptionLabel={(option) => option.title}
+              renderInput={(params) => (
+                <Search>
+                  <SearchIconWrapper>
+                    <SearchIcon />
+                  </SearchIconWrapper>
+                  {/* <StyledInputBase
+                    placeholder="Buscar…"
+                    inputProps={{ 'aria-label': 'search' }}
+                  /> */}
+                  <TextField {...params} label="Buscar"></TextField>
+                </Search>
+              )}
             />
-          </Search>
+          </Stack>
           <Badge
             badgeContent={cart?.length}
             style={{ marginTop: '5px' }}
