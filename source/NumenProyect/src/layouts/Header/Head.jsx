@@ -108,7 +108,7 @@ const Head = () => {
               mr: 2,
               display: { xs: 'none', md: 'flex', cursor: 'pointer' },
             }}
-            onClick={() => console.log('Logo click')}
+            onClick={() => navigate('/')}
           >
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
               <i className="fas fa-store"></i>
