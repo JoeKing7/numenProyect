@@ -9,6 +9,8 @@ import Head from '../layouts/Header/Head'
 import StoreProvider from '../store/StoreProvider'
 import ShoppingCartPage from '../views/ShoppingCartPage'
 import ProductInfo from '../views/ProductInfo'
+import About from '../views/About'
+import Instagram from '../components/Instagram/Instagram'
 
 const index = () => {
   return (
@@ -23,6 +25,8 @@ const index = () => {
             <Route path="/products" element={<Products />}></Route>
             <Route path="/product/:id" element={<ProductInfo />}></Route>
             <Route path="/shoppingCart" element={<ShoppingCartPage />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/instagram" element={<Instagram />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </BrowserRouter>
