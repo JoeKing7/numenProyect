@@ -1,4 +1,4 @@
-import { Button, Card, Container, Grid } from '@mui/material'
+import { Box, Button, Card, Container, Grid } from '@mui/material'
 import React, { Fragment, useContext } from 'react'
 import { TYPES } from '../../services/actions/shoppingActions'
 import api from '../../services/utils/fetchData/api'
@@ -38,7 +38,7 @@ const ShoppingList = () => {
   }
 
   return (
-    <Fragment>
+    <Box sx={{ minHeight: '59.5vh' }}>
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={8} md={8}>
@@ -65,7 +65,7 @@ const ShoppingList = () => {
           <Card>Para algo extra (Publidad?)</Card>
         </Grid>
       </Grid>
-    </Fragment>
+    </Box>
   )
 }
 

@@ -11,6 +11,7 @@ import ShoppingCartPage from '../views/ShoppingCartPage'
 import ProductInfo from '../views/ProductInfo'
 import About from '../views/About'
 import Instagram from '../components/Instagram/Instagram'
+import Footer from '../layouts/Footer/Footer'
 
 const index = () => {
   return (
@@ -29,6 +30,7 @@ const index = () => {
             <Route path="/instagram" element={<Instagram />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
+          <Footer></Footer>
         </BrowserRouter>
       </StoreProvider>
     </React.StrictMode>
