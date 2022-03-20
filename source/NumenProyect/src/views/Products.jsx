@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react'
-import { Grid } from '@mui/material'
+import { Box, Container, Grid, Typography } from '@mui/material'
 import { TYPES } from '../services/actions/shoppingActions'
 import ProductCard from '../components/Products/ProductCard'
 import {
@@ -37,16 +37,28 @@ const Products = () => {
     // console.log(state)
   }
   return (
-    <Fragment>
-      <h1>Products {DATA.lenght}</h1>
+    <Box>
+      <Container>
+        <Typography
+          variant="h3"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '50px',
+          }}
+        >
+          Productos {DATA.lenght}
+        </Typography>
+      </Container>
+
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {DATA.map((val, ind) => (
-          <Grid item sm={12} xs={12} md={6} key={ind}>
+          <Grid item sm={12} xs={12} md={4} lg={3} key={ind}>
             <ProductCard description={val} addToCart={addToCart}></ProductCard>
           </Grid>
         ))}
       </Grid>
-    </Fragment>
+    </Box>
   )
 }
 

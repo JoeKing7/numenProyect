@@ -1,14 +1,16 @@
 import { TYPES } from '../actions/shoppingActions'
-import api from '../utils/fetchData/api'
 import { loadProducts } from '../utils/loadProducts'
 import { loadCart } from '../utils/loadCart'
+import { loadOffers } from '../utils/loadOffers'
 
 const { data: products } = await loadProducts()
 const { data: cart } = await loadCart()
+const { data: offers } = await loadOffers()
 // estos datos debemos consumirlos desde el JSON
 export const shoppingInitialState = {
   products,
   cart,
+  offers,
 }
 
 export function shoppingReducer(state, action) {
