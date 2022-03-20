@@ -1,8 +1,10 @@
-import React, { Fragment } from 'react'
-import { Box } from '@mui/material'
+import React, { Fragment } from 'react';
+import { Box } from '@mui/material';
+import { Slider } from './ad-components/Slider'
 
 const OurPartner = () => {
   return (
+    <div>
     <Fragment>
       <Box
         sx={{
@@ -12,9 +14,10 @@ const OurPartner = () => {
           justifyContent: 'center',
         }}
       >
-        OurPartner
+      <Slider />
       </Box>
     </Fragment>
+    </div>
   )
 }
 

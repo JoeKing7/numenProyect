@@ -58,7 +58,7 @@ const ProductCard = ({ description, addToCart }) => {
                   <Box
                     sx={{ display: 'flex', justifyContent: 'space-between' }}
                   >
-                    <Typography variant="h3">
+                    <Typography variant="h4">
                       <sup>$</sup>
                       {price}
                     </Typography>
@@ -67,7 +67,7 @@ const ProductCard = ({ description, addToCart }) => {
                     </Typography>
                   </Box>
                 ) : (
-                  <Typography variant="h2">
+                  <Typography variant="h4">
                     <sup>$</sup>
                     {price}
                   </Typography>

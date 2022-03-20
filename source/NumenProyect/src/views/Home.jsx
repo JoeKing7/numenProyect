@@ -20,7 +20,6 @@ const Home = () => {
       <SurpriseSomeone></SurpriseSomeone>
       <Instagram></Instagram>
       <TellAFriend></TellAFriend>
-      <Footer></Footer>
     </Fragment>
   )
 }
