@@ -9,10 +9,32 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@mui/material'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import PetsIcon from '@mui/icons-material/Pets';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { Button } from '@mui/material'
+
+
 import '../../assets/styles/Footer/style.css'
 const Footer = () => {
-  const navigate = useNavigate()
+    
+
+  const menuItems = [
+    {
+      text:'Facebook',
+      icon:<FacebookIcon color ="primary"/>,
+      Link:'/'
+    },
+    {
+      text:'Instagram',
+      icon:<InstagramIcon color ="secondary"/>,
+      Link: 'https://www.instagram.com'
+    }
+
+  ]
+
+
   return (
     <Box className="bg-color footer">
       <Container>
@@ -23,20 +45,17 @@ const Footer = () => {
                 className="fas fa-store"
                 style={{ fontSize: '70px', padding: '10px' }}
               ></i>
-              Name
             </Link>
           </Grid>
+          
           <Grid item xs={12} sm={6} md={4} lg={4}>
             <List>
               <ListItem disablePadding>
                 <ListItemButton
                   onClick={() => navigate('/products')}
                   sx={{ color: 'white' }}
-                >
-                  <i
-                    className="fas fa-cubes"
-                    style={{ marginRight: '10px' }}
-                  ></i>
+                 >
+                  <PetsIcon/>
                   Productos
                 </ListItemButton>
               </ListItem>
@@ -44,7 +63,7 @@ const Footer = () => {
                 <ListItemButton
                   onClick={() => navigate('/about')}
                   sx={{ color: 'white' }}
-                >
+                 >
                   <i
                     className="fas fa-store-alt"
                     style={{ marginRight: '10px' }}
@@ -70,6 +89,33 @@ const Footer = () => {
               </ListItem>
             </List>
           </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={4}>
+            <List>
+                <ListItem disablePadding> 
+                  <Button
+                    href="https://www.facebook.com"
+                     sx={{ color: 'white' }}
+                   >
+                   <ListItemIcon><FacebookIcon sx={{ color: 'white' }}/></ListItemIcon> 
+                   Facebook
+                 </Button>
+                </ListItem>
+            </List>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={4}>
+            <List>
+                <ListItem disablePadding> 
+                  <Button
+                    href="https://www.instagram.com/?hl=es-la" 
+                     sx={{ color: 'white' }}
+                   >
+                   <ListItemIcon><InstagramIcon sx={{ color: 'white' }}/></ListItemIcon> 
+                   Instagram
+                 </Button>
+                </ListItem>
+            </List>
+          </Grid>
+          
         </Grid>
       </Container>
     </Box>
