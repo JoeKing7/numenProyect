@@ -25,16 +25,12 @@ export const Slider = () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
         >
-        {json.map( marcas => (
-          <SwiperSlide key={marcas.id}>
-            <div className="slide-content">
-              <h5>{marcas.marca}</h5>
-              <div className="marca-image">
-                <img src={marcas.fotomarca} alt="" className="marca-foto"></img>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
+        
+        <SwiperSlide> 1 </SwiperSlide>
+        <SwiperSlide> 2 </SwiperSlide>
+        <SwiperSlide> 3 </SwiperSlide>
+        <SwiperSlide> 4 </SwiperSlide>
+
       </Swiper>
     );
   };
