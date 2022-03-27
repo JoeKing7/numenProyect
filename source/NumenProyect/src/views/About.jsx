@@ -13,12 +13,13 @@ const About = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={5} md={5} lg={5}>
               <i
-                className="fas fa-store"
-                style={{ fontSize: '200px', padding: '10px', color: '#1565C0' }}
+                //className="fas fa-store"
+                img src='https://res.cloudinary.com/jimefioni/image/upload/v1648253242/images%20Numen/imagenes/0BD9DF75-EAC0-437A-95CE-AD874416B74E_foxdry.jpg'
+                style={{ fontSize: '200px', padding: '10px'}}
               ></i>
             </Grid>
             <Grid item xs={12} sm={7} md={7} lg={7}>
-              <Typography variant="h4">My company</Typography>
+              <Typography variant="h4">Mundo Animal</Typography>
               <Typography
                 variant="subtitle1"
                 sx={{
@@ -27,13 +28,7 @@ const About = () => {
                   whiteSpace: 'pre-wrap',
                 }}
               >
-                Cupidatat occaecat adipisicing proident laborum consectetur
-                veniam. Nostrud anim eiusmod Lorem consectetur velit magna in.
-                Enim cupidatat do commodo Lorem incididunt dolore. Laboris sit
-                sunt cillum adipisicing quis do reprehenderit adipisicing
-                cillum. Eu cillum cillum pariatur et in excepteur. Voluptate
-                deserunt reprehenderit nostrud esse. Velit laboris ea sunt
-                cupidatat incididunt mollit velit.{' '}
+                Somos una tienda para mascotas, creada en Octubre de 2020, con el propósito de ser un lugar ameno y donde se pueda encontrar todo tipo de alimento balanceado para perros y gatos. Accesorios de todo tipo, incluyendo: ropa, collares, correas, cuchas,transportadores, etc. La predisposición es uno de los pilares fundamentales en nuestra gente, la dedicación especial a cada cliente, proponiendo así el logro de una mejora calidad de vida de cada mascota que llega. {' '}
               </Typography>
             </Grid>
           </Grid>
