@@ -15,9 +15,10 @@ const TellAFriend = () => {
       <Box
         sx={{
           width: '100%',
-          height: '300px',
+          height: '100px',
           display: 'flex',
           justifyContent: 'center',
+          marginTop:'100px'
         }}
       >
         <Typography style={{fontSize:"2rem",}}>
@@ -39,7 +40,7 @@ const TellAFriend = () => {
           href="https://www.facebook.com"
           color="primary" 
           variant="contained"
-          style={{padding: "2rem",}}>
+          style={{padding: "2rem",borderRadius:"50%"}}>
           <Box>
             <FacebookIcon fontSize='large'/>
           </Box> 
@@ -49,7 +50,7 @@ const TellAFriend = () => {
           href="https://www.instagram.com/?hl=es-la"  
           color="secondary" 
            variant="contained"
-           style={{padding: "2rem",}}>
+           style={{padding: "2rem",borderRadius:"50%"}}>
             <Box>
               <InstagramIcon fontSize='large'/>
            </Box> 
@@ -59,7 +60,7 @@ const TellAFriend = () => {
            href="https://twitter.com/home" 
            color="info"
            variant="contained"
-           style={{padding: "2rem",}}>
+           style={{padding: "2rem",borderRadius:"50%"}}>
              <Box>
                <TwitterIcon fontSize='large'/>
              </Box> 
@@ -70,7 +71,7 @@ const TellAFriend = () => {
            href="#" 
            color="success"
            variant="contained"
-           style={{padding: "2rem"}}>
+           style={{padding: "2rem",borderRadius:"50%"}}>
              <Box>
                <WhatsAppIcon fontSize='large'/>
              </Box> 
