@@ -27,6 +27,7 @@ import {
 } from '@mui/material'
 import { TYPES } from '../../services/actions/shoppingActions'
 import { storeContext } from '../../store/StoreProvider'
+import logo from '../../assets/images/logo.png'
 
 const pages = ['Products', 'About', 'Instagram']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
@@ -97,7 +98,7 @@ const Head = () => {
     setAnchorElUser(null)
   }
   return (
-    <AppBar position="static">
+    <AppBar position="static" className="bg-color">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -111,7 +112,7 @@ const Head = () => {
             onClick={() => navigate('/')}
           >
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              <i className="fas fa-store"></i>
+              <img src={logo} width="48px" />
             </Link>
           </Typography>
 
@@ -166,7 +167,7 @@ const Head = () => {
             }}
           >
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              <i className="fas fa-store"></i>
+              <img src={logo} width="48px" />
             </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

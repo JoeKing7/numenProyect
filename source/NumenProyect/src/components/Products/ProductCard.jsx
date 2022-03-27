@@ -49,7 +49,11 @@ const ProductCard = ({ description, addToCart }) => {
             <Typography gutterBottom variant="h5" component="div">
               {title.length > 11 ? `${title.substr(0, 11)}...` : title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ maxWidth: '90%' }}
+            >
               {descrip.substr(0, 80)}...
             </Typography>
             <div className="content">

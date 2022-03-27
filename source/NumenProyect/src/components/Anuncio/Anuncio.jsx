@@ -1,5 +1,6 @@
-import { Alert, Box, Collapse, Container } from '@mui/material'
 import React, { useState } from 'react'
+import { Alert, Box, Collapse, Container } from '@mui/material'
+import '../../assets/styles/Anuncio/style.css'
 
 const Anuncio = () => {
   const [open, setOpen] = useState(true)
@@ -12,6 +13,7 @@ const Anuncio = () => {
             justifyContent: 'center',
             fontSize: '18px',
           }}
+          className="bg-anuncio"
           variant="filled"
           severity="warning"
           onClose={() => {
