@@ -1,5 +1,6 @@
-import { Box, Card, Container, Grid, Typography } from '@mui/material'
 import React from 'react'
+import { Box, Card, Container, Grid, Typography } from '@mui/material'
+import logo from '../assets/images/logoMA.jpeg'
 
 const About = () => {
   return (
@@ -21,7 +22,7 @@ const About = () => {
             >
               <img
                 //className="fas fa-store"
-                src="https://res.cloudinary.com/jimefioni/image/upload/v1648253242/images%20Numen/imagenes/0BD9DF75-EAC0-437A-95CE-AD874416B74E_foxdry.jpg"
+                src={logo}
                 style={{
                   padding: '10px',
                 }}
