@@ -21,7 +21,7 @@ const TellAFriend = () => {
           marginTop:'100px'
         }}
       >
-        <Typography style={{fontSize:"2rem",}}>
+        <Typography style={{fontSize:"2rem"}}>
           Contacto
         </Typography>
         <div>
@@ -47,7 +47,7 @@ const TellAFriend = () => {
           
           </Button>
           <Button
-          href="https://www.instagram.com/?hl=es-la"  
+          href="https://www.instagram.com/mundoanimaloliva/" 
           color="secondary" 
            variant="contained"
            style={{padding: "2rem",borderRadius:"50%"}}>
