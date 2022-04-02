@@ -29,8 +29,8 @@ import { TYPES } from '../../services/actions/shoppingActions'
 import { storeContext } from '../../store/StoreProvider'
 import logo from '../../assets/images/logo.png'
 
-const pages = ['Products', 'About', 'Instagram']
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+const pages = ['Productos', 'Acerca de', 'Instagram']
+const settings = ['Perfil', 'Cuenta', 'Dashboard', 'Logout']
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
