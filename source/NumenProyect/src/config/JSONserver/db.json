@@ -295,32 +295,5 @@
         "count": 400
       }
     }
-  ],
-  "marcas": [
-    {
-      "id": 1,
-      "marca": "Dogui",
-      "fotomarca": "./Anuncio/ad-assets/dogui.jpg"
-    },
-    {
-      "id": 2,
-      "marca": "Insignia",
-      "fotomarca": "./Anuncio/ad-assets/estampa-insignia.jpg"
-    },
-    {
-      "id": 3,
-      "marca": "Excellent",
-      "fotomarca": "./Anuncio/ad-assets/purina-excellent.jpg"
-    },
-    {
-      "id": 4,
-      "marca": "Royal Canin",
-      "fotomarca": "./Anuncio/ad-assets/royal-canin.jpg"
-    },
-    {
-      "id": 5,
-      "marca": "Vagoneta",
-      "fotomarca": "./Anuncio/ad-assets/vagoneta.jpg"
-    }
   ]
 }

@@ -12,6 +12,7 @@ const OurPartner = () => {
           height: '300px',
           display: 'flex',
           justifyContent: 'center',
+          marginTop: '20px',
         }}
       >
       <Slider />
