@@ -94,7 +94,7 @@ const ProductCard = ({ description, addToCart }) => {
             color="primary"
             onClick={() => navigate(`/product/${id}`)}
           >
-            <i class="far fa-eye"></i>
+            <i className="far fa-eye"></i>
           </Button>
           <Button size="large" color="primary" onClick={() => addToCart(id)}>
             <i className="fas fa-cart-plus"></i>

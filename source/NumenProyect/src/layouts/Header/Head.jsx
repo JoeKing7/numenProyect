@@ -29,7 +29,11 @@ import { TYPES } from '../../services/actions/shoppingActions'
 import { storeContext } from '../../store/StoreProvider'
 import logo from '../../assets/images/logo.png'
 
-const pages = ['Productos', 'Acerca de', 'Instagram']
+const pages = [
+  { name: 'Productos', link: 'products' },
+  { name: 'Acerca de', link: 'about' },
+  { name: 'Instagram', link: 'instagram' },
+]
 const settings = ['Perfil', 'Cuenta', 'Dashboard', 'Logout']
 
 const Search = styled('div')(({ theme }) => ({
@@ -145,11 +149,11 @@ const Head = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+              {pages.map((page, ind) => (
+                <MenuItem key={ind} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Link to={page.toLowerCase()} className="menu-item">
-                      {page}
+                    <Link to={page.link.toLowerCase()} className="menu-item">
+                      {page.name}
                     </Link>
                   </Typography>
                 </MenuItem>
@@ -171,15 +175,15 @@ const Head = () => {
             </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page, ind) => (
               <NavLink
-                key={page}
-                to={`/${page.toLowerCase()}`}
+                key={ind}
+                to={`/${page.link.toLowerCase()}`}
                 className={({ isActive }) =>
                   isActive ? 'active' : 'link-page'
                 }
               >
-                {page}
+                {page.name}
               </NavLink>
             ))}
           </Box>
