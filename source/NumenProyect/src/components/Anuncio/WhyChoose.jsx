@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 const WhyChoose = () => {
   return (
@@ -7,14 +7,18 @@ const WhyChoose = () => {
       <Box
         sx={{
           width: '100%',
-          height: '300px',
+          height: '100px',
           display: 'flex',
           justifyContent: 'center',
         }}
       >
-        WhyChoose
+        <Typography style={{fontSize:"2rem"}}>
+          Porqué Elegirnos?
+        </Typography>
+        
       </Box>
     </Fragment>
+    
   )
 }
 
