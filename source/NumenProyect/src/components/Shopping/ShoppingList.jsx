@@ -5,6 +5,7 @@ import api from '../../services/utils/fetchData/api'
 import { messageError } from '../../services/utils/messages'
 import { storeContext } from '../../store/StoreProvider'
 import CartItem from './CartItem'
+import publicidadImagen from '../../assets/images/publicidad.jpeg'
 
 const ShoppingList = () => {
   const [store, dispatch] = useContext(storeContext)
@@ -62,7 +63,9 @@ const ShoppingList = () => {
           ))}
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <Card>Para algo extra (Publidad?)</Card>
+          <Card>
+            <img src={publicidadImagen} width="100%"></img>
+          </Card>
         </Grid>
       </Grid>
     </Box>

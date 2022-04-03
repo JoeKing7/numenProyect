@@ -20,8 +20,8 @@ const Anuncio = () => {
             setOpen(false)
           }}
         >
-          <i className="fas fa-car-alt"></i>
-          Domicilio gratis por compras mayores a 20 Pesos
+          <i className="fas fa-car-alt" style={{ marginRight: '10px' }}></i>
+          Domicilio gratis por compras mayores a 2000 Pesos
         </Alert>
       </Collapse>
       {/* <i className="fas fa-car-alt"></i> */}
