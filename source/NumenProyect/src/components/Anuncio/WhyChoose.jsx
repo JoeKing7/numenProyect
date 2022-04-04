@@ -18,12 +18,12 @@ const WhyChoose = () => {
         
       </Box>
       <Container sx= {{
-        paddingTop: "20px",
+        paddingTop: "10px",
         display:"flex",
         justifyContent:"center",
       }}
       >
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           <Grid item xs={3} sm={3} md={3}>
             <Card>
               <CardContent>
