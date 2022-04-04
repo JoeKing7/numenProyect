@@ -30,15 +30,16 @@ const SurpriseSomeone = () => {
                 style={{
                   padding: '20px',
                 }}>
-                Sabemos lo que tu mascota necesita
+                Sorprende a alguien!
               </Typography>
 
               <Typography variant="subtitle 1" gutterBottom 
                 style={{
                   padding: '20px',
                 }}>
-                Por eso, aparte de contar con una gran variedad de alimentos para ellos, contamos con múltiples accesorios que le harán la vida más feliz.
-                Visita nuestra catálogo y no dudes en requerir información por cualquiera de nuestros medios de contacto.
+                Contamos con box sorpresas para regalar! En diferentes variedades a elegir mascotas pequeñas o grandes, adultos o puppies.
+                Podrás elegir entre tratamientos de belleza integrales, alimentación saludable, juguetes para pileta o entrenamiento. 
+                Sin dudar... entre los más distinguidos detalles... SORPRENDE A ALGUIEN!
               </Typography>          
 
               <Typography

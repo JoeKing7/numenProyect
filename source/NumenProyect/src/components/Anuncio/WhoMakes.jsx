@@ -42,7 +42,7 @@ const WhoMakes = () => {
             <Grid item xs={12} sm={7} md={7} lg={7}>
                 <Typography variant="h3" gutterBottom 
                 style={{
-                  padding: '10px',
+                  padding: '40px',
                 }}>
                   Nuestro compromiso</Typography>
                 <Typography variant="body1" gutterBottom 

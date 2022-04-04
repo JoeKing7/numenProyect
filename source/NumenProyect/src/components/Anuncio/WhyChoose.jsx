@@ -25,7 +25,7 @@ const WhyChoose = () => {
       >
         <Grid container spacing={10}>
           <Grid item xs={12} sm={6} md={2.3}>
-            <Card style={{height: 450,width:210}}>
+            <Card style={{height: 400,width:210}}>
               <CardContent >
                 <img src='https://res.cloudinary.com/jimefioni/image/upload/v1649021210/images%20Numen/imagenes/icons/girl_iso_color_icon_64_f2eehi.png'></img>
                 <Typography style={{fontSize:"1rem"}}><b>Personal capacitado</b></Typography>
@@ -37,7 +37,7 @@ const WhyChoose = () => {
           </Grid>
             <br></br>
           <Grid item xs={12} sm={6} md={2.3}>
-            <Card style={{height: 450,width:210}}>
+            <Card style={{height: 400,width:210}}>
               <CardContent>
                 <img src='https://res.cloudinary.com/jimefioni/image/upload/v1649021210/images%20Numen/imagenes/icons/card_iso_color_icon_64_gnky7o.png'></img>
                 <Typography style={{fontSize:"1rem"}}><b>Pagos digitales</b></Typography>
@@ -49,7 +49,7 @@ const WhyChoose = () => {
           </Grid>
             <br></br>
           <Grid item xs={12} sm={6} md={2.3}>
-            <Card style={{height: 450,width:210}}>
+            <Card style={{height: 400,width:210}}>
               <CardContent>
                 <img src='https://res.cloudinary.com/jimefioni/image/upload/v1649021210/images%20Numen/imagenes/icons/map_pin_iso_color_icon_64_d9qdup.png'></img>
                 <Typography style={{fontSize:"1rem"}}><b>Envíos a domicilio</b></Typography>
@@ -61,7 +61,7 @@ const WhyChoose = () => {
           </Grid>
             <br></br>
           <Grid item xs={12} sm={6} md={2.3}>
-            <Card style={{height: 450,width:210}}>
+            <Card style={{height: 400,width:210}}>
               <CardContent>
                 <img src='https://res.cloudinary.com/jimefioni/image/upload/v1649021210/images%20Numen/imagenes/icons/sheild_iso_color_icon_64_ywm0ir.png'></img>
                 <Typography style={{fontSize:"1rem"}}><b>Calidad garantizada</b></Typography>
@@ -73,7 +73,7 @@ const WhyChoose = () => {
           </Grid>
             <br></br>
           <Grid item xs={12} sm={6} md={2.3}>
-            <Card style={{height: 450,width:210}}>
+            <Card style={{height: 400,width:210}}>
               <CardContent style={{ alignItems: 'center'}}>
                 <img src='https://res.cloudinary.com/jimefioni/image/upload/v1649021210/images%20Numen/imagenes/icons/notify_heart_iso_color_icon_64_iqfwbc.png'></img>
                 <Typography style={{fontSize:"1rem"}}><b>Nos interesa tu mascota</b></Typography>

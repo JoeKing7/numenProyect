@@ -11,7 +11,7 @@ const fotosMarcas = [
   },
   {
     name: 'Insignia',
-    photo: '../../src/assets/images/estampa-insignia.jpg',
+    photo: '/src/assets/images/logo-insignia1_.jpg',
     path: '/',
     style: {},
   },
