@@ -35,7 +35,7 @@ const Instagram = () => {
         justifyContent: 'center',
     }}>
       <Typography style={{fontSize:"2rem"}} >
-          Visitanos en nuestro Instragram
+          Visitanos en <a href='https://www.instagram.com/mundoanimaloliva/'>#MundoAnimalOliva</a>
         </Typography>
   </Box>
    <Box
@@ -51,15 +51,27 @@ const Instagram = () => {
         pagination={{
         clickable: true,
         }}
-        slidesPerView={2}
-        spaceBetween={30}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 50,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+          1500:{
+            slidesPerView: 3,
+            spaceBetween: 50,
+          }
+        }}
+        centeredSlides={true}
         modules={[ Navigation, Pagination]}
-        className="swiper-container"
+        className="mySwiper"
       > 
       <SwiperSlide>  
-       <Card  sx={{ maxWidth: 370,flexGrow: 1  }}>
-         <CardActionArea  
-         href="https://www.instagram.com/mundoanimaloliva/">
+       <Card  sx={{ maxWidth: 360 }}>
+         <CardActionArea  >
            <CardMedia
             component="img"
             height="400"
@@ -77,9 +89,8 @@ const Instagram = () => {
       </SwiperSlide>
 
       <SwiperSlide>  
-       <Card  sx={{maxWidth: 370 }}>
-         <CardActionArea
-         href="https://www.instagram.com/mundoanimaloliva/">
+       <Card  sx={{maxWidth: 360  }}>
+         <CardActionArea>
            <CardMedia
             component="img"
             height="400"
@@ -98,9 +109,8 @@ const Instagram = () => {
       </SwiperSlide>
 
       <SwiperSlide>  
-       <Card  sx={{ maxWidth: 370 }}>
-         <CardActionArea
-         href="https://www.instagram.com/mundoanimaloliva/">
+       <Card  sx={{ maxWidth: 360 }}>
+         <CardActionArea>
            <CardMedia
             component="img"
             height="400"
@@ -118,9 +128,8 @@ const Instagram = () => {
       </SwiperSlide>
       
       <SwiperSlide>  
-       <Card  sx={{ maxWidth: 370  }}>
-         <CardActionArea
-         href="https://www.instagram.com/mundoanimaloliva/">
+       <Card  sx={{ maxWidth: 360 }}>
+         <CardActionArea>
            <CardMedia
             component="img"
             height="400"
@@ -138,9 +147,8 @@ const Instagram = () => {
       </SwiperSlide>
 
       <SwiperSlide>  
-       <Card  sx={{ maxWidth: 370 }}>
-         <CardActionArea
-         href="https://www.instagram.com/mundoanimaloliva/">
+       <Card  sx={{ maxWidth: 360  }}>
+         <CardActionArea>
            <CardMedia
             component="img"
             height="400"
@@ -158,9 +166,8 @@ const Instagram = () => {
       </SwiperSlide>
 
       <SwiperSlide>  
-       <Card  sx={{ maxWidth: 370  }}>
-         <CardActionArea
-         href="https://www.instagram.com/mundoanimaloliva/" >
+       <Card  sx={{ maxWidth: 360   }}>
+         <CardActionArea>
            <CardMedia
             component="img"
             height="400"
@@ -178,9 +185,8 @@ const Instagram = () => {
       </SwiperSlide>
 
       <SwiperSlide>  
-       <Card  sx={{ maxWidth: 370 }}>
-         <CardActionArea
-         href="https://www.instagram.com/mundoanimaloliva/" >
+       <Card  sx={{ maxWidth: 360  }}>
+         <CardActionArea>
            <CardMedia
             component="img"
             height="400"
