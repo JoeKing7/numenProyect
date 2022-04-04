@@ -38,20 +38,13 @@ const itemValores = [
 const WhoMakes = () => {
   return (
     <Fragment>
-      <Box sx={{ height: '56.8vh' }}>
-      <Container
-        sx={{
-          paddingTop: '20px',
-        }}
-      >
-        <Card>
-          <Grid container spacing={2}>
+          <Grid container spacing={5}>
             <Grid item xs={12} sm={7} md={7} lg={7}>
                 <Typography variant="h3" gutterBottom 
                 style={{
                   padding: '10px',
                 }}>
-                  ¿Por qué elegirnos?</Typography>
+                  Nuestro compromiso</Typography>
                 <Typography variant="body1" gutterBottom 
                 style={{
                   padding: '10px',
@@ -76,13 +69,10 @@ const WhoMakes = () => {
               lg={5}
               sx={{ display: 'flex', justifyContent: 'center' }}
             >
-              <img className='photo-whomakes' src='https://res.cloudinary.com/hernangbv91/image/upload/v1648737112/57af44af3d5806d5b7d9e5f10a21520b_tqv5t4.jpg'
+              <img className='foto-whomakes' src='https://res.cloudinary.com/hernangbv91/image/upload/v1648737112/57af44af3d5806d5b7d9e5f10a21520b_tqv5t4.jpg'
               ></img>
             </Grid>
           </Grid>
-        </Card>
-      </Container>
-    </Box>
     </Fragment>
   )
 }

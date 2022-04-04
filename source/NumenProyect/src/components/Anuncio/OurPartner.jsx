@@ -41,10 +41,12 @@ const OurPartner = () => {
         <Box
           sx={{
             width: '100%',
-            height: '300px',
+            height: '500px',
             display: 'flex',
             justifyContent: 'center',
-            marginTop: '20px',
+            marginTop: '50px',
+            marginBottom: '50px',
+            border: 'solid',
           }}
         >
           <Slider fotos={fotosMarcas} />

@@ -17,10 +17,13 @@
 }
 
 .slider-photo{
-  object-position: 0%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.photo-whomakes{
+.foto-whomakes{
   padding: 10%;
   object-fit: cover;
 }

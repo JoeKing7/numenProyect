@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Box, Card, Container, Grid, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 
@@ -19,6 +19,20 @@ export const Slider = ({ fotos }) => {
       spaceBetween={0}
       slidesPerView={1}
       navigation
+      breakpoints={{
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 50,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+        1500:{
+          slidesPerView: 3,
+          spaceBetween: 50,
+        }
+      }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       // onSwiper={(swiper) => console.log(swiper)}
