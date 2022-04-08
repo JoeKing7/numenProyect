@@ -39,7 +39,7 @@ const LatestOffers = () => {
           marginBottom: '50px',
         }}
       >
-        <Typography variant="h1">Ofertas</Typography>
+        <Typography variant="h2">Ofertas</Typography>
       </Container>
       <Box sx={{ marginBottom: '50px' }}>
         <Grid container spacing={2}>

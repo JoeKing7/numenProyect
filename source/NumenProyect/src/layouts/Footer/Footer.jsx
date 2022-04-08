@@ -9,7 +9,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import PetsIcon from '@mui/icons-material/Pets'
 import InstagramIcon from '@mui/icons-material/Instagram'
@@ -18,6 +18,7 @@ import logo from '../../assets/images/logo.png'
 
 import '../../assets/styles/Footer/style.css'
 const Footer = () => {
+  const navigate = useNavigate()
   const menuItems = [
     {
       text: 'Facebook',
