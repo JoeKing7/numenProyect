@@ -5,7 +5,7 @@ import { Slider } from './ad-components/Slider'
 const fotosMarcas = [
   {
     name: 'Dogui',
-    photo: '../../src/assets/images/dogui.jpg',
+    photo: '/src/assets/images/bolsas_home_ar.png',
     path: '/',
     style: {},
   },
@@ -16,20 +16,20 @@ const fotosMarcas = [
     style: {},
   },
   {
-    name: 'Excellent',
-    photo: '../../src/assets/images/purina-excellent.jpg',
+    name: 'Whiskas',
+    photo: '/src/assets/images/whiskas2.jpg',
     path: '/',
     style: {},
   },
   {
-    name: 'Royal Canin',
-    photo: '../../src/assets/images/royal-canin.jpg',
+    name: 'Vital Crops',
+    photo: '/src/assets/images/dog pro.jpg',
     path: '/',
     style: {},
   },
   {
     name: 'Vagoneta',
-    photo: '../../src/assets/images/vagoneta.jpg',
+    photo: '/src/assets/images/vagoneta 2.jpg',
     path: '/',
     style: {},
   },
