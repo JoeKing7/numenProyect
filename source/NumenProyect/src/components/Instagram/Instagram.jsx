@@ -33,8 +33,9 @@ const Instagram = () => {
         height: '100px',
         display: 'flex',
         justifyContent: 'center',
+        margin:'20px'
     }}>
-      <Typography style={{fontSize:"2rem"}} >
+      <Typography style={{fontSize:"2rem",marginTop:'20px'}} >
           Visitanos en <a href='https://www.instagram.com/mundoanimaloliva/'>#MundoAnimalOliva</a>
         </Typography>
   </Box>
@@ -44,6 +45,8 @@ const Instagram = () => {
           height: '500px',
           display: 'flex',
           justifyContent: 'center',
+          margin:'20px'
+         
         }}
       >
         <Swiper
@@ -55,6 +58,7 @@ const Instagram = () => {
           640: {
             slidesPerView: 1,
             spaceBetween: 50,
+            
           },
           1024: {
             slidesPerView: 2,

@@ -15,44 +15,36 @@ import PetsIcon from '@mui/icons-material/Pets'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import { Button } from '@mui/material'
 import logo from '../../assets/images/logo.png'
+import EmailIcon from '@mui/icons-material/Email';
+import AddLocationIcon from '@mui/icons-material/AddLocation';
 
 import '../../assets/styles/Footer/style.css'
 const Footer = () => {
   const navigate = useNavigate()
-  const menuItems = [
-    {
-      text: 'Facebook',
-      icon: <FacebookIcon color="primary" />,
-      Link: '/',
-    },
-    {
-      text: 'Instagram',
-      icon: <InstagramIcon color="secondary" />,
-      Link: 'https://www.instagram.com',
-    },
-  ]
-
+  
   return (
     <Box className="bg-color footer">
       <Container>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={4} lg={4}>
+          <Grid item xs={12} sm={4} md={4} lg={4}>
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              <img src={logo} style={{ width: '30%', padding: '10px' }}></img>
+              <img src={logo} style={{ width: '40%', padding: '10px' }}></img>
             </Link>
           </Grid>
+          
 
-          <Grid item xs={12} sm={6} md={4} lg={4}>
+          <Grid item xs={12} sm={4} md={4} lg={4}>
             <List>
               <ListItem disablePadding>
                 <ListItemButton
                   onClick={() => navigate('/products')}
                   sx={{ color: 'white' }}
                 >
-                  <PetsIcon />
+                  <PetsIcon style={{marginRight: '10px'}} />
                   Productos
                 </ListItemButton>
               </ListItem>
+
               <ListItem disablePadding>
                 <ListItemButton
                   onClick={() => navigate('/about')}
@@ -65,10 +57,6 @@ const Footer = () => {
                   Nosotros
                 </ListItemButton>
               </ListItem>
-            </List>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4}>
-            <List>
               <ListItem disablePadding>
                 <ListItemButton
                   onClick={() => navigate('/shoppingCart')}
@@ -83,33 +71,32 @@ const Footer = () => {
               </ListItem>
             </List>
           </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4}>
+          
+          
+          
+          <Grid item xs={12} sm={4} md={4} lg={4}>
+            <List sx={{marginTop:'7px'}}>
+              <ListItemIcon
+               sx={{ color: 'white'}}
+              >
+                <EmailIcon style={{marginRight:'10px'}}/> mundooliva@gmail.com
+              </ListItemIcon>
+              
+             
+            </List>
             <List>
-              <ListItem disablePadding>
-                <Button href="https://www.facebook.com" sx={{ color: 'white' }}>
-                  <ListItemIcon>
-                    <FacebookIcon sx={{ color: 'white' }} />
-                  </ListItemIcon>
-                  Facebook
-                </Button>
-              </ListItem>
+              <ListItemIcon
+               sx={{ color: 'white'}}
+              >
+                <AddLocationIcon style={{marginRight:'10px'}}/> pasamelaubijime
+              </ListItemIcon>
+              
+             
             </List>
           </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4}>
-            <List>
-              <ListItem disablePadding>
-                <Button
-                  href="https://www.instagram.com/?hl=es-la"
-                  sx={{ color: 'white' }}
-                >
-                  <ListItemIcon>
-                    <InstagramIcon sx={{ color: 'white' }} />
-                  </ListItemIcon>
-                  Instagram
-                </Button>
-              </ListItem>
-            </List>
-          </Grid>
+
+         
+        
         </Grid>
       </Container>
     </Box>
