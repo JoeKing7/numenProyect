@@ -4,8 +4,8 @@ import { Slider } from './ad-components/Slider'
 
 const fotosMarcas = [
   {
-    name: 'Dogui',
-    photo: '/src/assets/images/slider-dogui.jpg',
+    name: 'Purina',
+    photo: '/src/assets/images/slider-purina.jpg',
     path: '/',
     style: {},
   },
