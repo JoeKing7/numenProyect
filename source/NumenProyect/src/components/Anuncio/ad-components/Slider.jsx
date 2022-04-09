@@ -59,14 +59,9 @@ export const Slider = ({ fotos }) => {
             ) : (
               ''
             )}
-            <div>
-              <img
-                className="slider-photo"
-                src={item.photo}
-                alt={item.name}
-                style={item.style}
-              />
-            </div>
+            <Box className="slider-photo">
+              <img src={item.photo} alt={item.name} style={item.style} />
+            </Box>
           </div>
         </SwiperSlide>
       ))}
