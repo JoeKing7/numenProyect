@@ -79,7 +79,7 @@ const Footer = () => {
               <ListItemIcon
                sx={{ color: 'white'}}
               >
-                <EmailIcon style={{marginRight:'10px'}}/> mundooliva@gmail.com
+                <EmailIcon style={{marginRight:'10px'}}/> mundoanimaloliva@gmail.com
               </ListItemIcon>
               
              
@@ -88,7 +88,7 @@ const Footer = () => {
               <ListItemIcon
                sx={{ color: 'white'}}
               >
-                <AddLocationIcon style={{marginRight:'10px'}}/> pasamelaubijime
+                <AddLocationIcon style={{marginRight:'10px'}}/> Monseñor gallardo 148 local 2. Oliva - Cordoba
               </ListItemIcon>
               
              
