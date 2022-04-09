@@ -46,7 +46,6 @@ const OurPartner = () => {
             justifyContent: 'center',
             marginTop: '50px',
             marginBottom: '50px',
-            border: 'solid',
           }}
         >
           <Slider fotos={fotosMarcas} />

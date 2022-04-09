@@ -1,5 +1,15 @@
 import React, { Component } from 'react'
-import { Box, Card, Container, Grid, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
+import {
+  Box,
+  Card,
+  Container,
+  Grid,
+  Typography,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from '@mui/material'
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 
@@ -25,13 +35,13 @@ export const Slider = ({ fotos }) => {
           spaceBetween: 50,
         },
         1024: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 50,
         },
-        1500:{
-          slidesPerView: 3,
+        1500: {
+          slidesPerView: 1,
           spaceBetween: 50,
-        }
+        },
       }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
@@ -41,7 +51,13 @@ export const Slider = ({ fotos }) => {
       {fotos.map((item, ind) => (
         <SwiperSlide key={ind}>
           <div>
-            {item.name ? <p className="slider-marca">{item.name}</p> : ''}
+            {item.name ? (
+              <Typography variant="h5" className="slider-marca">
+                {item.name}
+              </Typography>
+            ) : (
+              ''
+            )}
             <div>
               <img
                 className="slider-photo"

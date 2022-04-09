@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Container, Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import ProductCard from './ProductCard'
@@ -29,7 +29,12 @@ const LatestOffers = () => {
     }
   }
   return (
-    <Fragment>
+    <Box
+      sx={{
+        backgroundColor: '#f3f4f9',
+        paddingBottom: '20px',
+      }}
+    >
       <Container
         sx={{
           width: '100%',
@@ -39,7 +44,9 @@ const LatestOffers = () => {
           marginBottom: '50px',
         }}
       >
-        <Typography variant="h2">Ofertas</Typography>
+        <Typography variant="h2" sx={{ marginTop: '20px' }}>
+          Ofertas
+        </Typography>
       </Container>
       <Box sx={{ marginBottom: '50px' }}>
         <Grid container spacing={2}>
@@ -53,7 +60,7 @@ const LatestOffers = () => {
           ))}
         </Grid>
       </Box>
-    </Fragment>
+    </Box>
   )
 }
 

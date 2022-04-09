@@ -7,7 +7,6 @@ import Banner from '../components/Banner/Banner'
 import Instagram from '../components/Instagram/Instagram'
 import TellAFriend from '../components/Instagram/TellAFriend'
 import LatestOffers from '../components/Products/LatestOffers'
-import Footer from '../layouts/Footer/Footer'
 
 const Home = () => {
   return (

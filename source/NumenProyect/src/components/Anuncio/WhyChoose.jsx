@@ -21,7 +21,7 @@ const WhyChoose = () => {
           marginBottom: '50px',
         }}
       >
-        <Typography variant="h2">Por qué Elegirnos?</Typography>
+        <Typography variant="h2">¿Por qué Elegirnos?</Typography>
       </Box>
       <Container
         sx={{
