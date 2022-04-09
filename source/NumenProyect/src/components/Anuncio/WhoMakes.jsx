@@ -53,7 +53,7 @@ const WhoMakes = () => {
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
-          marginTop: '100px',
+          marginTop: '80px',
         }}
       >
         <Typography variant="h2" sx={{ marginTop: '20px' }}>

@@ -241,60 +241,7 @@
       }
     }
   ],
-  "cart": [
-    {
-      "id": 9,
-      "title": "Royal Canin - Renal Canine x 10 Kg.",
-      "price": 10102.82,
-      "description": "Alimento indicado para perros adultos formulado para ayudar a mantener la función renal en caso de insuficiencia crónica, a través de sus niveles restringidos de fósforo y proteínas de alta calidad.",
-      "category": "Perro adulto veterinario",
-      "image": "https://res.cloudinary.com/jimefioni/image/upload/v1647991202/images%20Numen/imagenes/royal%20perros/renal_dog_ybni2v.jpg",
-      "rating": {
-        "rate": 3.3,
-        "count": 203
-      },
-      "quantity": 1
-    },
-    {
-      "id": 3,
-      "title": "Royal Canin - Mini Adulto x 7,5 Kg.",
-      "price": 6630.33,
-      "description": "Alimento para perros adultos de talla pequeña (peso adulto hasta 10 Kg). Desde 10 meses a 8 años de edad.",
-      "category": "Perro adulto",
-      "image": "https://res.cloudinary.com/jimefioni/image/upload/v1647991232/images%20Numen/imagenes/royal%20perros/mini_adulto_hxvh7f.jpg",
-      "rating": {
-        "rate": 4.7,
-        "count": 500
-      },
-      "quantity": 1
-    },
-    {
-      "id": 5,
-      "title": "Royal Canin - Maxi Adulto x 15 Kg.",
-      "price": 10617.09,
-      "description": "Alimento completo para perros adultos de talla grande (peso adulto de 26 a 44 Kg). Desde los 12 meses a 7 años de edad.",
-      "category": "Perro adulto",
-      "image": "https://res.cloudinary.com/jimefioni/image/upload/v1647991153/images%20Numen/imagenes/royal%20perros/maxi_adulto_j1rzx5.jpg",
-      "rating": {
-        "rate": 4.6,
-        "count": 400
-      },
-      "quantity": 1
-    },
-    {
-      "id": 7,
-      "title": "Performance Adult Dog x 15 Kg.",
-      "price": 7590.05,
-      "description": "Club Performance Adulto es un alimento balanceado para perros adultos a partir de los 12 meses de edad en razas pequeñas y medianas; y de los 18 meses de edad en razas grandes y gigantes. Esta enriquecido con vitaminas y contiene Omega 3 y 6.",
-      "category": "Perro Adulto",
-      "image": "https://res.cloudinary.com/jimefioni/image/upload/v1647991230/images%20Numen/imagenes/royal%20perros/performance_adulto_ebynmh.jpg",
-      "rating": {
-        "rate": 5,
-        "count": 400
-      },
-      "quantity": 1
-    }
-  ],
+  "cart": [],
   "offers": [
     {
       "id": 4,

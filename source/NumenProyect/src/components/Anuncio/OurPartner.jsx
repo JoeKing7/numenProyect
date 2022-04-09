@@ -5,31 +5,37 @@ import { Slider } from './ad-components/Slider'
 const fotosMarcas = [
   {
     name: 'Dogui',
-    photo: '/src/assets/images/bolsas_home_ar.png',
+    photo: '/src/assets/images/slider-dogui.jpg',
     path: '/',
     style: {},
   },
   {
-    name: 'Insignia',
-    photo: '/src/assets/images/logo-insignia1_.jpg',
+    name: 'Eukanuba',
+    photo: '/src/assets/images/slider-eukanuba.jpg',
+    path: '/',
+    style: {},
+  },
+  {
+    name: 'Maintenance Criadores',
+    photo: '/src/assets/images/slider-maintenance.jpg',
+    path: '/',
+    style: {},
+  },
+  {
+    name: 'Pedigree',
+    photo: '/src/assets/images/slider-pedigree.jpg',
+    path: '/',
+    style: {},
+  },
+  {
+    name: 'Royal Canin',
+    photo: '/src/assets/images/slider-royalcanin.jpg',
     path: '/',
     style: {},
   },
   {
     name: 'Whiskas',
-    photo: '/src/assets/images/whiskas2.jpg',
-    path: '/',
-    style: {},
-  },
-  {
-    name: 'Vital Crops',
-    photo: '/src/assets/images/dog pro.jpg',
-    path: '/',
-    style: {},
-  },
-  {
-    name: 'Vagoneta',
-    photo: '/src/assets/images/vagoneta 2.jpg',
+    photo: '/src/assets/images/slider-whiskas.jpg',
     path: '/',
     style: {},
   },
@@ -44,8 +50,8 @@ const OurPartner = () => {
             height: '500px',
             display: 'flex',
             justifyContent: 'center',
-            marginTop: '50px',
-            marginBottom: '50px',
+            marginTop: '100px',
+            marginBottom: '100px',
           }}
         >
           <Slider fotos={fotosMarcas} />

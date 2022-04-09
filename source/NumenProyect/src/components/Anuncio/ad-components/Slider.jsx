@@ -45,6 +45,7 @@ export const Slider = ({ fotos }) => {
       }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
+      centeredSlides={true}
       // onSwiper={(swiper) => console.log(swiper)}
       // onSlideChange={() => console.log('slide change')}
     >
