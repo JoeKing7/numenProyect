@@ -47,7 +47,7 @@ const OurPartner = () => {
         <Box
           sx={{
             width: '100%',
-            height: '500px',
+            height: '450px',
             display: 'flex',
             justifyContent: 'center',
             marginTop: '100px',
