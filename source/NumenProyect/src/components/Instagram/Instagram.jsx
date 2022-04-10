@@ -35,7 +35,7 @@ const Instagram = () => {
         <Typography variant="h3" sx={{ marginTop: '20px' }}>
           Visitanos en{' '}
           <a href="https://www.instagram.com/mundoanimaloliva/">
-            #MundoAnimalOliva
+            @MundoAnimalOliva
           </a>
         </Typography>
       </Box>
